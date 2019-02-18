@@ -1,0 +1,218 @@
+/*----------------Header style---------------------*/
+body{    font-family: "Comic Sans MS", cursive, sans-serif; background-image: url("../images/site/background.jpg");margin-top: 0px;}
+
+.webPage{
+    background: #fff;
+    border: 2px solid white;
+    width: 95%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative
+}
+
+.leftIcon{
+    width: 50%;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+.leftIcon img{ max-width: 110px;}
+
+.rightLink{
+    width: 40%;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    align-content: flex-end;
+    text-align: right;
+}
+.rightLink a{   font-size: 0.8em; font-weight: bold;}
+.rightLink a:link{   text-decoration: none;color: #000;}
+.rightLink img{    max-width: 20px; margin-right: 5px;}
+
+header{margin-bottom: 80px;}
+
+/*---------------- Navigation  Style ---------------------*/
+.navigation {  margin: 0; padding: 0; overflow: hidden; text-align:left; font-size: 0.9rem;font-family: 'Tahoma', sans-serif; background-color: #DE2226;  }
+.navigation li { margin-left: 5px; display: inline-block; padding-top: 10px; }
+.navigation a {	display: block;	color: #fff;	padding: 8px;	text-decoration: none;}
+.navigation a:hover {	color: #DE2226; background-color: #fff;}
+
+    
+/*---------------- Content Style ---------------------*/
+
+.imageMain {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.imageMainContainer {
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 45%;
+    text-align: left;
+     background-color: rgba(255,255,255, 0.5);
+}
+
+.imageMainContainer div{
+    color: #990033;
+    line-height: 1.4em;
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+.imageMainContainer h2{
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 4px;
+}
+
+.imageMainContainer ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.imageMainContainer img{
+    padding-top: 10px;
+    display:block;
+    margin:auto;
+}
+
+/*---------------- Recipe  ---------------------*/
+.recipe{
+    position: relative;
+    text-align: left;
+    color: black;
+}
+
+/*---+++++++++++++++------------- Recipe  --------+++++++++++++++-------------*/
+
+
+/*---------------- Featured Recipes  ---------------------*/
+
+.featuredRecipe{
+    position: relative;
+    text-align: left;
+    color: black;
+   
+}
+
+/*------------------- Grid Container ------------------------*/
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 5px;
+    padding: 5px;
+   
+}
+
+ .item{
+
+    text-align: center;
+    width: 100%;
+}
+.recipes_box{
+    background-color: rgba(128,128,128,0.4);
+    height: 5em;
+    width: 95%;
+    padding: 3px;
+}
+
+.recipes_box img{
+    height: 100%;
+}
+/*------------------- featured recipe End ------------------------*/
+.content{
+    margin: 5px;
+}
+.content hr{
+        color: #000;
+        background-color: #000;
+        height: 0.2em;
+}
+
+.footer{
+    text-align: center;
+    font-size: 0.7em;
+    font-weight: bold;
+}
+.footer p{
+    margin:0px;
+}
+
+/*------------------- featured recipe End ------------------------*/
+/*------------------- ACME LOGIN ------------------------*/
+
+.login_box{
+    border: #DE2226 1px solid;
+    margin: 10px;
+    padding: 5px;
+     border-radius: 5px;
+}
+
+input[type=text], input[type=password], input[type=email]  {
+  width: 95%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+
+button {
+  background-color: #DE2226;
+  color: #fff;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 95%;
+    border-radius: 5px;
+}
+
+.member_box{
+
+    margin: 5px;
+
+}
+.member_box button{
+    margin-left: 10px;
+    color: #fff;
+}
+.member_box button{
+    color: #DE2226;
+}
+.button_create {
+  background-color: #fff;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid  #DE2226;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 95%;
+}
+/*----------form--------------*/
+
+form{
+   margin-left: 10px;
+}
+
+form p{
+    color:#DE2226; 
+    font-size: 1.5em;
+    margin: 0px;
+}
+
+/*------------------- ACME LOGIN END------------------------*/
+
+
+.warning{
+     color:#990033; 
+}

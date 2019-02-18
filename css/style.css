@@ -1,0 +1,149 @@
+/*----------------Header style---------------------*/
+body{    
+    font-family: "Comic Sans MS", cursive, sans-serif;background-image: url("../images/site/background.jpg");margin-top: 0px;}
+
+.webPage{
+    background: #fff;
+    border: 2px solid white;
+    width: 90%;
+     display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.leftIcon{
+    width: 50%;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+.leftIcon img{ max-width: 150px;}
+
+.rightLink{
+    width: 40%;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    align-content: flex-end;
+    text-align: right;
+}
+.rightLink a{   font-size: 0.9em; font-weight: bold;}
+.rightLink a:link{   text-decoration: none;color: #000;}
+.rightLink img{    max-width: 25px; margin-right: 5px;}
+
+header{margin-bottom: 80px;}
+
+/*---------------- Navigation  Style ---------------------*/
+
+.navigation {   font-size: 1.2em;  }
+.navigation li { display: inline-block; padding-top: 10px; }
+.navigation a {	display: block;	color: #fff;	padding: 8px;	text-decoration: none;}
+.navigation a:hover {	color: #DE2226; background-color: #fff;}
+
+    
+/*---------------- Content Style ---------------------*/
+
+.imageMain {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.imageMainContainer {
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 45%;
+    text-align: left;
+     background-color: rgba(255,255,255, 0.0);
+}
+
+.imageMainContainer div{
+    color: #990033;
+    line-height: 1.4em;
+    font-size: 1.4em;
+    margin-left: 5px;
+    max-width: 100%;
+}
+
+.imageMainContainer h2{
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 4px;
+}
+
+.imageMainContainer ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.imageMainContainer img{
+    padding-top: 10px;
+    display:block;
+    margin:auto;
+    align-content: flex-start;
+}
+
+/*---------------- Recipe  ---------------------*/
+.recipe{
+    position: relative;
+    text-align: left;
+    color: black;
+}
+
+/*---+++++++++++++++------------- Recipe  --------+++++++++++++++-------------*/
+
+.recipe-grap {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 5px;
+    padding: 5px;
+   
+}
+.featuredRecipe{
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+.recipe{
+    grid-column-start: 2;
+}
+
+/*------------------- featured recipe End ------------------------*/
+.content{
+    margin: 5px;
+}
+.content hr{
+        color: #000;
+        background-color: #000;
+        height: 0.2em;
+}
+
+.footer{
+    text-align: center;
+    font-size: 0.7em;
+    font-weight: bold;
+}
+.footer p{
+    margin:0px;
+}
+
+/*------------------- featured recipe End ------------------------*/
+/*------------------- ACME LOGIN ------------------------*/
+
+.login_content{
+    max-width: 500px;
+}
+
+.login_box{
+    border: #fff 1px solid;
+}
+
+/*------------------- ACME LOGIN END------------------------*/
+
+.button_form, .button_login, .button_create{
+      width: 45%;
+}

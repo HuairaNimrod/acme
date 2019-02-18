@@ -1,0 +1,12 @@
+CREATE TABLE teams ( id INTEGER NOT NULL PRIMARY KEY, name VARCHAR(37), conference VARCHAR(2) NULL )
+
+ 1 row inserted. (Query took 0.0106 seconds.)
+INSERT INTO teams ( id , name , conference ) VALUES ( 9 , 'Riff Raff' , 'F' )
+
+ 1 row affected. (Query took 0.0086 seconds.)
+UPDATE teams SET conference = 'E' WHERE id = 9
+
+ 0 rows affected. (Query took 0.0102 seconds.)
+DELETE FROM teams WHERE id = 63
+
+
