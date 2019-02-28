@@ -25,16 +25,15 @@
                 
                 <div class="product_box">   
                    <?php 
-                        if(isset($message)){
-                            echo $message;
+                        if(isset($messageNewProduct)){
+                            echo $messageNewProduct;
                         }
                    ?>
                    
-                   <form method="post" action="/acme/accounts/index.php">
+                   <form method="post" action="/acme/products/index.php">
                        <p>Category</p> 
-                           <select name="invName">
-                                <?php echo $categoryList; ?>
-                           </select>
+                                  <?php echo $catList; ?>
+                           
                        <p>Product Name</p>
                              <input type="text" name="invName" id="invName">
                              <br>
@@ -43,6 +42,8 @@
                              <br>
                        <p>Product Image(Path to image)</p>
                             <input type="text" name="invImage" id="invImage">
+                            
+                            <!--/Applications/XAMPP/xamppfiles/htdocs/acme/images/no-image.png-->
                              <br>
                        <p>Product Thumbnail(path to thumbnail)</p>
                              <input type="text" name="invThumbnail" id="invThumbnail">
@@ -68,9 +69,12 @@
                        <p>Product Style</p>
                             <input type="text" name="invStyle" id="invStyle">
                              <br><br>
-                       <button class="button_form" type="submit" name="submit" value="register">Submit</button> 
+                       <button class="button_form" type="submit" name="submit" value="registerProduct">Submit</button> 
                          
+                       
+                        <input type="hidden" name="action" value="registerProduct">
                    </form> 
+
                </div>
                 
                 

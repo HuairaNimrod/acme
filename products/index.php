@@ -25,12 +25,19 @@ $categories = getCategories();
  
  
  //build a category form list
-
- $categoryList='<option value="none">Select a category</option>';
- foreach ($categories as $category) {
-  $categoryList .= "<option value='$category[categoryName]' >$category[categoryName]</option>";
- }
-
+$catList = "<select id='categoryId' name='categoryId'>";
+$catList .= "<option selected disabled>Select a category</option>";
+foreach ($categories as $category) {
+  $catList .= "<option id='$category[categoryId]' value='$category[categoryId]'";
+  if(isset($categoryId)){
+    if($category['categoryId'] === $categoryId){
+      $catList .= ' selected ';
+    }
+  }
+  $catList .= ">$category[categoryName]</option>";
+}
+$catList .='</select>';
+ 
  
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL){
@@ -70,6 +77,55 @@ case 'registerCategory':
         }
     
         break;
+        
+        
+        
+ case 'registerProduct':
+
+      // Filter and store the data
+     
+        $invName = filter_input(INPUT_POST, 'invName');
+        $invDescription = filter_input(INPUT_POST, 'invDescription');
+        $invImage = filter_input(INPUT_POST, 'invImage');
+        $invThumbnail = filter_input(INPUT_POST, 'invThumbnail');
+        $invPrice = filter_input(INPUT_POST, 'invPrice');
+        $invStock = filter_input(INPUT_POST, 'invStock');
+        $invSize = filter_input(INPUT_POST, 'invSize');
+        $invWeight = filter_input(INPUT_POST, 'invWeight');
+        $invLocation = filter_input(INPUT_POST, 'invLocation');
+        $invVendor = filter_input(INPUT_POST, 'invVendor');
+        $invStyle = filter_input(INPUT_POST, 'invStyle');
+        $categoryId = filter_input(INPUT_POST, 'categoryId');
+            
+        // Check for missing data
+        if(empty($invName) || empty($invDescription) || empty($invImage) || empty($invThumbnail) || empty($invPrice) ||  empty($invStock) || empty($invSize) || empty($invWeight) || empty($invLocation) || empty($invVendor) ||  empty($invStyle) || empty($categoryId)){
+         $messageNewProduct = '<p class="warning">Please provide information for all empty form fields.</p>';
+         include '../view/new-prod.php';
+         exit; 
+        }
+        
+     
+        //send the data to the model
+    $newProductOutcome = createProduct($categoryId, $invName, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invSize, $invWeight, $invLocation, $invVendor, $invStyle);
+ 
+        // Check and report the result
+        if($newProductOutcome === 1){
+         $messageNewProduct = '<p class="success"> New product added</p>';
+         include '../view/new-prod.php';
+         exit;
+        } else {
+         $messageNewProduct = '<p class="warning">Sorry, product no created</p>';
+         include '../view/new-prod.php';
+         exit;
+        }
+        
+         exit;
+    
+        break;
+     
+     
+     
+     
 default:
 include '../view/prod-mgmt.php';
 }

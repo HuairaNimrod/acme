@@ -28,3 +28,35 @@ function createCategory($categoryName){
             // Return the indication of success (rows changed)
  return $rowsChanged;
 }
+
+
+/* this function will handle site registrations*/
+function createProduct($categoryId, $invName, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invSize, $invWeight, $invLocation, $invVendor, $invStyle){
+
+    // Create a connection object using the acme connection function
+ $db = acmeConnect();
+            // The SQL statement
+ $sql = 'INSERT INTO inventory (categoryId, invName, invDescription, invImage, invThumbnail, invPrice, invStock, invSize, invWeight, invLocation, invVendor, invStyle) VALUES (:categoryId, :invName, :invDescription, :invImage, :invThumbnail, :invPrice, :invStock, :invSize, :invWeight, :invLocation, :invVendor, :invStyle)';
+              // Create the prepared statement using the acme connection
+ $stmt = $db->prepare($sql);
+  $stmt->bindValue(':categoryId', $categoryId, PDO::PARAM_STR);
+  $stmt->bindValue(':invName', $invName, PDO::PARAM_STR);
+  $stmt->bindValue(':invDescription', $invDescription, PDO::PARAM_STR);
+  $stmt->bindValue(':invImage', $invImage, PDO::PARAM_STR);
+  $stmt->bindValue(':invThumbnail', $invThumbnail, PDO::PARAM_STR);
+  $stmt->bindValue(':invPrice', $invPrice, PDO::PARAM_STR);
+  $stmt->bindValue(':invStock', $invStock, PDO::PARAM_STR);
+  $stmt->bindValue(':invSize', $invSize, PDO::PARAM_STR);
+  $stmt->bindValue(':invWeight', $invWeight, PDO::PARAM_STR);
+  $stmt->bindValue(':invLocation', $invLocation, PDO::PARAM_STR);
+  $stmt->bindValue(':invVendor', $invVendor, PDO::PARAM_STR);
+  $stmt->bindValue(':invStyle', $invStyle, PDO::PARAM_STR);
+  //this runs the statements above and inserts the data into the database
+  $stmt->execute();
+  //this checks to see how many rows were added as a result of the above statements
+  $rowsChanged = $stmt->rowCount();
+  //this closes the interaction between the function and the database server
+  $stmt->closeCursor();
+  //This sends the results from the rowCount above to the controller (used in showing a success message I assume)
+  return $rowsChanged;
+}

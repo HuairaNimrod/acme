@@ -156,7 +156,7 @@ header{margin-bottom: 80px;}
      border-radius: 5px;
 }
 
-input[type=text], input[type=password], input[type=email]  {
+input[type=text], input[type=password], input[type=email], input[type=number]  {
   width: 95%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -215,4 +215,7 @@ form p{
 
 .warning{
      color:#990033; 
+}
+.success{
+     color:#5cb85c; 
 }
