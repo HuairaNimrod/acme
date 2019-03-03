@@ -1,7 +1,7 @@
 <?php
 
 /* 
- Account mdel for site visitors
+ Account model for site visitors
  */
 
 

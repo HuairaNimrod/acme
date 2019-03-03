@@ -17,7 +17,7 @@
         
             
             <nav>
-                   <?php echo $navList; ?>
+                   <?php echo $navigationList; ?>
             </nav> 
                 
             <div class="login_content">
@@ -29,16 +29,31 @@
                      echo $message;
                     }
                     ?>
-                <form>
-                     <p>Username</p>
-                         <input type="text" placeholder="Email address" name="user" >
-                         <br>
+                <form method="post">
+                     <p>Email</p>
+                         <input type="email" 
+                                name="clientEmail" 
+                                    id="clientEmail" 
+                                    <?php if(isset($clientEmail)){echo "value='$clientEmail'";}  ?>
+                                    required>
+                             
+
                      <p>Password:</p>
-                     <input type="password" placeholder="Enter Password" name="password" >
-                         <br><br>
-                     <button class="button_login" type="submit">Login</button>
+                        <span class="input_tip">Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
+                        <input 
+                            type="password" 
+                            placeholder="Enter Password" 
+                            pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                            name="clientPassword" 
+                            id="clientPassword"
+                            required >
+                        
+                     <button class="button_login" type="submit" name="submit" value="LoginEnter">Login</button>
+                     <input type="hidden" name="action" value="LoginEnter">
                   </form> 
                </div>
+                
+                
                <div class="member_box">
                    <h2>Not a member?</h2>
                    

@@ -17,7 +17,7 @@
         
             
             <nav>
-                   <?php echo $navList; ?>
+                   <?php echo $navigationList; ?>
             </nav> 
             <div class="content">
                 <h1> Product Management </h1>

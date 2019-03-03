@@ -165,6 +165,15 @@ input[type=text], input[type=password], input[type=email], input[type=number]  {
   box-sizing: border-box;
 }
 
+textarea{
+  width: 95%;
+  height: 100px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
 
 button {
   background-color: #DE2226;
@@ -214,8 +223,15 @@ form p{
 
 
 .warning{
+    font-size: 0.7em;
      color:#990033; 
 }
 .success{
+   font-size: 0.7em;
      color:#5cb85c; 
+}
+
+.input_tip{
+    font-size: 0.7em;
+    color:#686868; 
 }

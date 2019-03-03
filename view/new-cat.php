@@ -17,7 +17,7 @@
         
             
             <nav>
-                   <?php echo $navList; ?>
+                   <?php echo $navigationList; ?>
             </nav> 
             <div class="content">
                 <h1> New Category </h1>
@@ -32,13 +32,18 @@
                     
                  <form method="post" action="/acme/products/index.php">
                          <p>New category Name:<p>
-                             <input name="categoryName" id="categoryName" type="text">
+                             <input name="categoryName"
+                                    id="categoryName"
+                                    type="text"
+                                    required>
                              
-                             <br><br>
+                           
                              
-                         <button class="button_form" type="submit" name="submit" value="registerCategory">Add Category</button> 
-                         <!--   <input type="submit" name="submit" id="regbtn" value="register">  -->                                          
-                        
+                         <button class="button_form"
+                                 type="submit"
+                                 name="submit"
+                                 value="registerCategory">Add Category</button> 
+                       
                           <!-- Add the action name - value pair-->
                           <input type="hidden" name="action" value="registerCategory">
                    </form> 

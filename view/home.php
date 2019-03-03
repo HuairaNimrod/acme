@@ -17,7 +17,7 @@
         
             
             <nav>
-                   <?php echo $navList; ?>
+                   <?php echo $navigationList; ?>
             </nav> 
             
             

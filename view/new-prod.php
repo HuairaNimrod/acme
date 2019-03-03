@@ -1,3 +1,18 @@
+<?php
+ //build a category form list
+        $catList = "<select id='categoryId' name='categoryId'>";
+        $catList .= "<option selected disabled>Select a category</option>";
+        foreach ($categories as $category) {
+          $catList .= "<option id='$category[categoryId]' value='$category[categoryId]'";
+          if(isset($categoryId)){
+            if($category['categoryId'] === $categoryId){
+              $catList .= ' selected ';
+            }
+          }
+          $catList .= ">$category[categoryName]</option>";
+        }
+        $catList .='</select>';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -17,7 +32,7 @@
         
             
             <nav>
-                   <?php echo $navList; ?>
+                   <?php echo $navigationList; ?>
             </nav> 
             <div class="content">
                 <h1> Add Product </h1>
@@ -35,40 +50,94 @@
                                   <?php echo $catList; ?>
                            
                        <p>Product Name</p>
-                             <input type="text" name="invName" id="invName">
-                             <br>
+                             <input 
+                                 type="text" 
+                                 name="invName" 
+                                 id="invName"
+                                 <?php if(isset($invName)){echo "value='$invName'";}  ?>
+                                 required >
+                             
                        <p>Product Description</p>
-                             <input type="text" name="invDescription" id="invDescription">
-                             <br>
+                            <textarea 
+                                  rows="5" cols="40"
+                                 name="invDescription" 
+                                 id="invDescription"
+                                     required ><?php if(isset($invDescription)){echo $invDescription;}  ?></textarea>
+                             
                        <p>Product Image(Path to image)</p>
-                            <input type="text" name="invImage" id="invImage">
+                            <input 
+                                type="text" 
+                                name="invImage" 
+                                id="invImage"
+                                <?php if(isset($invImage)){echo "value='$invImage'";}  ?>
+                                required >
                             
                             <!--/Applications/XAMPP/xamppfiles/htdocs/acme/images/no-image.png-->
-                             <br>
+                             
                        <p>Product Thumbnail(path to thumbnail)</p>
-                             <input type="text" name="invThumbnail" id="invThumbnail">
-                             <br>
+                             <input 
+                                 type="text" 
+                                 name="invThumbnail" 
+                                 id="invThumbnail"
+                                 <?php if(isset($invThumbnail)){echo "value='$invThumbnail'";}  ?>
+                                 required >
+                             
                        <p>Product Price</p>
-                             <input type="number" name="invPrice" id="invPrice">
-                             <br>
+                             <input 
+                                 type="number" 
+                                 name="invPrice" 
+                                 id="invPrice"
+                                 <?php if(isset($invPrice)){echo "value='$invPrice'";}  ?>
+                                 required >
+                             
                        <p>Product Stock</p>
-                            <input type="number" name="invStock" id="invStock">
-                             <br>
+                            <input 
+                                type="number" 
+                                name="invStock" 
+                                id="invStock"
+                                <?php if(isset($invStock)){echo "value='$invStock'";}  ?>
+                                required >
+                            
                        <p>Product Size</p>
-                            <input type="number" name="invSize" id="invSize">
-                             <br>
+                            <input 
+                                type="number" 
+                                name="invSize" 
+                                id="invSize"
+                                <?php if(isset($invSize)){echo "value='$invSize'";}  ?>
+                                required >
+                             
                        <p>Product Weight</p>
-                             <input type="number" name="invWeight" id="invWeight">
-                             <br>
+                             <input 
+                                 type="number" 
+                                 name="invWeight" 
+                                 id="invWeight"
+                                 <?php if(isset($invWeight)){echo "value='$invWeight'";}  ?>
+                                 required >
+                             
                        <p>Product Location</p>
-                            <input type="text" name="invLocation" id="invLocation">
-                             <br>
+                            <input 
+                                type="text" 
+                                name="invLocation" 
+                                id="invLocation"
+                                <?php if(isset($invLocation)){echo "value='$invLocation'";}  ?>
+                                required >
+                             
                        <p>Product Vendor</p>
-                            <input type="text" name="invVendor" id="invVendor">
-                             <br>
+                            <input 
+                                type="text" 
+                                name="invVendor" 
+                                id="invVendor"
+                                <?php if(isset($invVendor)){echo "value='$invVendor'";}  ?>
+                                required >
+                            
                        <p>Product Style</p>
-                            <input type="text" name="invStyle" id="invStyle">
-                             <br><br>
+                            <input 
+                                type="text" 
+                                name="invStyle" 
+                                id="invStyle"
+                                <?php if(isset($invStyle)){echo "value='$invStyle'";}  ?>
+                                required >
+                            
                        <button class="button_form" type="submit" name="submit" value="registerProduct">Submit</button> 
                          
                        
