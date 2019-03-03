@@ -12,7 +12,14 @@
         <div class="webPage">
         <header>
             <div class="leftIcon"><img src="images/site/logo.gif" alt="page logo"/></div>
-            <div class="rightLink"><a href="/acme/accounts/index.php?action=Login"><img src="images/site/account.gif" alt="account logo"/>My Account </a></div>
+            <div class="rightLink">
+                <?php 
+                if(isset($cookieFirstname))
+                    {
+                    echo "<span>Welcome $cookieFirstname</span>";
+                    } 
+                ?><a href="/acme/accounts/index.php?action=Login">
+                        <img src="images/site/account.gif" alt="account logo"/> My Account </a></div>
         </header>
         
             

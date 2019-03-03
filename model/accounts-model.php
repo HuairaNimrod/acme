@@ -32,4 +32,43 @@ function regClient($clientFirstname, $clientLastname, $clientEmail, $clientPassw
             // Return the indication of success (rows changed)
  return $rowsChanged;
 }
+
+
+//this funcion will check for an existing email
+
+function checkExistingEmail($clientEmail){
     
+        $db = acmeConnect();  
+        $sql = 'SELECT clientEmail FROM clients WHERE clientEmail = :clientEmail';
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue(':clientEmail', $clientEmail, PDO::PARAM_STR);
+        $stmt->execute();
+         
+        $status=$stmt->fetch( PDO::FETCH_NUM);
+        
+        $stmt->closeCursor();
+        if (empty($status)){
+            return 0;
+        }else
+        {
+            return 1;
+        }
+         
+}
+
+
+// Get client data based on an email address
+function getClient($clientEmail){
+ $db = acmeConnect();
+ $sql = 'SELECT clientId, clientFirstname, clientLastname, clientEmail, clientLevel, clientPassword 
+         FROM clients
+         WHERE clientEmail = :clientEmail';
+ $stmt = $db->prepare($sql);
+ $stmt->bindValue(':clientEmail', $clientEmail, PDO::PARAM_STR);
+ $stmt->execute();
+ $clientData = $stmt->fetch(PDO::FETCH_ASSOC);
+ $stmt->closeCursor();
+ return $clientData;
+}
+
+

@@ -25,11 +25,11 @@
                <div class="login_box">
                 <h2> ACME Login </h2>
                 <?php
-                    if (isset($message)) {
-                     echo $message;
+                    if (isset($_SESSION['message'])) {
+                        echo $_SESSION['message'];
                     }
                     ?>
-                <form method="post">
+                <form method="post" action="/acme/accounts/">
                      <p>Email</p>
                          <input type="email" 
                                 name="clientEmail" 
@@ -66,7 +66,7 @@
         <footer>
             <div class="footer">
                     <p> &copy; ACME, All rights reserved. </p>
-                    <p>All images used are beleived to be in "Fair Use". Please notify the author if any are not and they will be removed.</p>
+                    <p>All images used are believed to be in "Fair Use". Please notify the author if any are not and they will be removed.</p>
                     <p>Last Updated: 24 January, 2019</p> 
             </div>
         </footer>
