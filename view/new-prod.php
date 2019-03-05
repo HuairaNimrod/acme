@@ -1,4 +1,10 @@
 <?php
+if ($_SESSION['clientData']['clientLevel'] < 2) {
+ header('location: /acme/');
+ exit;
+}
+?>
+<?php
  //build a category form list
         $catList = "<select id='categoryId' name='categoryId'>";
         $catList .= "<option selected disabled>Select a category</option>";

@@ -60,3 +60,15 @@ function createProduct($categoryId, $invName, $invDescription, $invImage, $invTh
   //This sends the results from the rowCount above to the controller (used in showing a success message I assume)
   return $rowsChanged;
 }
+
+//function that will get basic product informations form the inventory
+
+function getProductBasics() {
+ $db = acmeConnect();
+ $sql = 'SELECT invName, invId FROM inventory ORDER BY invName ASC';
+ $stmt = $db->prepare($sql);
+ $stmt->execute();
+ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+ $stmt->closeCursor();
+ return $products;
+}

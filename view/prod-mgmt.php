@@ -1,3 +1,9 @@
+<?php
+if ($_SESSION['clientData']['clientLevel'] < 2) {
+ header('location: /acme/');
+ exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -30,6 +36,15 @@
                     
                  
                 </ul>
+                
+                
+                <?php
+                    if (isset($message)) {
+                     echo $message;
+                    } if (isset($prodList)) {
+                     echo $prodList;
+                    }
+                  ?>
                 
                 <hr>
                 
