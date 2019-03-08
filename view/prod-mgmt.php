@@ -1,7 +1,13 @@
 <?php
+<<<<<<< HEAD
+    if ($_SESSION['clientData']['clientLevel'] < 2) {
+    header('location: /acme/');
+    exit;
+=======
 if ($_SESSION['clientData']['clientLevel'] < 2) {
  header('location: /acme/');
  exit;
+>>>>>>> fffaf6c8620be67f9b92616bb7c359d38fa9730d
 }
 ?>
 <!DOCTYPE html>
@@ -37,6 +43,15 @@ if ($_SESSION['clientData']['clientLevel'] < 2) {
                  
                 </ul>
                 
+<<<<<<< HEAD
+                <?php
+                    if (isset($messageDefault)) {
+                     echo $messageDefault;
+                    } if (isset($prodList)) {
+                     echo $prodList;
+                    }
+                 ?>
+=======
                 
                 <?php
                     if (isset($message)) {
@@ -45,6 +60,7 @@ if ($_SESSION['clientData']['clientLevel'] < 2) {
                      echo $prodList;
                     }
                   ?>
+>>>>>>> fffaf6c8620be67f9b92616bb7c359d38fa9730d
                 
                 <hr>
                 

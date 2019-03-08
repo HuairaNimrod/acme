@@ -18,6 +18,14 @@ if ($_SESSION['clientData']['clientLevel'] < 2) {
           $catList .= ">$category[categoryName]</option>";
         }
         $catList .='</select>';
+        
+        
+//add protection to the view
+        if ($_SESSION['clientData']['clientLevel'] < 2) {
+         header('location: /acme/');
+         exit;
+        }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

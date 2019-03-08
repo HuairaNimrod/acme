@@ -61,7 +61,10 @@ function createProduct($categoryId, $invName, $invDescription, $invImage, $invTh
   return $rowsChanged;
 }
 
+<<<<<<< HEAD
+=======
 //function that will get basic product informations form the inventory
+>>>>>>> fffaf6c8620be67f9b92616bb7c359d38fa9730d
 
 function getProductBasics() {
  $db = acmeConnect();
@@ -71,4 +74,8 @@ function getProductBasics() {
  $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
  $stmt->closeCursor();
  return $products;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> fffaf6c8620be67f9b92616bb7c359d38fa9730d

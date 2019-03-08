@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
+//product controller
+=======
 //products controller
+>>>>>>> fffaf6c8620be67f9b92616bb7c359d38fa9730d
 //Create or acces a Session
 session_start();
 
@@ -117,9 +121,33 @@ case 'registerCategory':
         break;
      
      
-     
+  case 'mod':
+
+    break;   
      
 default:
+<<<<<<< HEAD
+        $products = getProductBasics();
+        if(count($products) > 0){
+            $prodList = '<table>';
+            $prodList .= '<thead>';
+            $prodList .= '<tr><th>Product Name</th><td>&nbsp;</td><td>&nbsp;</td></tr>';
+            $prodList .= '</thead>';
+            $prodList .= '<tbody>';
+         foreach ($products as $product) {
+            $prodList .= "<tr><td>$product[invName]</td>";
+            $prodList .= "<td><a href='/acme/products?action=mod&id=$product[invId]' title='Click to modify'>Modify</a></td>";
+            $prodList .= "<td><a href='/acme/products?action=del&id=$product[invId]' title='Click to delete'>Delete</a></td></tr>";
+         }
+          $prodList .= '</tbody></table>';
+         } else {
+          $messageDefault = '<p class="notify">Sorry, no products were returned.</p>';
+       }
+
+    
+include '../view/prod-mgmt.php';
+break;
+=======
     
     $products = getProductBasics();
     
@@ -142,4 +170,5 @@ default:
     
 include '../view/prod-mgmt.php';
     break;
+>>>>>>> fffaf6c8620be67f9b92616bb7c359d38fa9730d
 }
